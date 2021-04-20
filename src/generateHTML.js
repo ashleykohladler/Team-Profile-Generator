@@ -1,4 +1,4 @@
-const generateManager =(data)=>{
+const generateManager = (data) => {
     //data.name data.id data.email data.officeNumber
     return `  <li>
     <div class="col-md-3">
@@ -23,14 +23,25 @@ const generateManager =(data)=>{
     </div>
   </div>
   </li>`
-}
+};
+
+const generateEngineer = (data) => {
+    return ``;
+};
+
+const generateIntern = (data) => {
+    return ``;
+};
+
+
+
 const generateCards = (data) => {
     //data will be an array of Employees (Manager/Intern/Engineer)
     data.forEach(element => {
         //generate a card based on role 
-        if(element.getRole() === "Manager"){
+        if (element.getRole() === "Manager") {
             generateManager(data);
-        }
+        } 
     });
 }
 const generateHTML = (data) => {

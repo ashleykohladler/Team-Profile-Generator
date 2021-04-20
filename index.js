@@ -116,4 +116,4 @@ const init = () => {
 /**Function Calls */
 init();
 
-fs.writeFile('index.html', generateHTML(element));
+// fs.writeFile('index.html', generateHTML(element));
