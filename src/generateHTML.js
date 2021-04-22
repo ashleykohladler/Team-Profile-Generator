@@ -1,22 +1,24 @@
 const generateManager = (data) => {
     //data.name data.id data.email data.officeNumber
-    return `  <li>
+    return ` <div class='container'>
+    <ul class="ul">  <li>
     <div class="col-md-3">
     <div class="card cardbody">
-    <div class="card-header font: text-white" style="background: blue">
+    <div class="card-header font: text-white" style="background: #3333ff">
                    ${data.name}<br>
                    <div class="fas fa-mug-hot">${data.getRole()}</div>
-                  </div>
+                   </div>
+                  
       <div class="card-body">
         <form role="form">          
-          <div class="form-group">
-              <label  ${data.id}</label>
+          <div class="form-group"><b>ID:</b>
+                ${data.id}
           </div>
-          <div class="form-group">
-            <label ${data.email}</label>
+          <div class="form-group"><b>Email:</b>
+             ${data.email}
           </div>
-          <div class="form-group">
-              <label ${data.officeNumber}</label>                  
+          <div class="form-group"><b>Office Number:</b>
+               ${data.officeNumber}                  
           </div>              
           </form>
       </div>
@@ -26,22 +28,23 @@ const generateManager = (data) => {
 };
 
 const generateEngineer = (data) => {
-    return ` <li>
+    return ` <div class='container'>
+    <ul class="ul"> <li>
     <div class="col-md-3">
     <div class="card cardbody">
-    <div class="card-header font: text-white" style="background: blue">
+    <div class="card-header font: text-white" style="background: #3333ff">
                 ${data.name}<br>
                 <div class="fas fa-glasses">${data.getRole()}</div>
                 </div>
     <div class="card-body">
         <form role="form">          
-        <div class="form-group">
+        <div class="form-group"><b>ID:</b>
             ${data.id}
         </div>
-        <div class="form-group">
+        <div class="form-group"><b>Email:</b>
             ${data.email}
         </div>
-        <div class="form-group">
+        <div class="form-group"><b>GitHubusername:</b>
             ${data.gitHub}              
         </div>                
         </form>
@@ -53,22 +56,23 @@ const generateEngineer = (data) => {
 
 
 const generateIntern = (data) => {
-    return `<li>
+    return ` <div class='container'>
+    <ul class="ul"> <li>
     <div class="col-md-3">
     <div class="card cardbody">
-    <div class="card-header font: text-white" style="background: blue">
+    <div class="card-header font: text-white" style="background: #3333ff">
                 ${data.name}<br>
                 <div class="fas fa-user-graduate">${data.getRole()}</div>
                 </div>
     <div class="card-body">
         <form role="form">          
-        <div class="form-group">
+        <div class="form-group"><b>ID:</b>
             ${data.id}
         </div>
-        <div class="form-group">
+        <div class="form-group"><b>Email:</b>
             ${data.email}
         </div>
-        <div class="form-group">
+        <div class="form-group"><b>School:</b>
             ${data.school}                  
         </div>                
         </form>
@@ -115,9 +119,10 @@ const generateHTML = (data) => {
         <title>Document</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/ba0d43019a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./dist/style.css">
     </head>
     <body>
-    <div class="jumbotron jumbotron-fluid" style='background-color: red;'>
+    <div class="jumbotron jumbotron-fluid" style='background-color: #ff0000;'>
     <div class="container">
       <h1 class="display-4 text-center">My Team</h1>
     </div>
