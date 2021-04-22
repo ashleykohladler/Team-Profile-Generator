@@ -5,7 +5,7 @@ const generateManager = (data) => {
     <div class="card cardbody">
     <div class="card-header font: text-white" style="background: blue">
                    ${data.name}<br>
-                   <div class="fas fa-mug-hot">${data.getRole}</div>
+                   <div class="fas fa-mug-hot">${data.getRole()}</div>
                   </div>
       <div class="card-body">
         <form role="form">          
@@ -26,24 +26,86 @@ const generateManager = (data) => {
 };
 
 const generateEngineer = (data) => {
-    return ``;
+    return ` <li>
+    <div class="col-md-3">
+    <div class="card cardbody">
+    <div class="card-header font: text-white" style="background: blue">
+                ${data.name}<br>
+                <div class="fas fa-glasses">${data.getRole()}</div>
+                </div>
+    <div class="card-body">
+        <form role="form">          
+        <div class="form-group">
+            ${data.id}
+        </div>
+        <div class="form-group">
+            ${data.email}
+        </div>
+        <div class="form-group">
+            ${data.gitHub}              
+        </div>                
+        </form>
+    </div>
+    </div>
+</div>
+</li>`;
 };
 
+
 const generateIntern = (data) => {
-    return ``;
+    return `<li>
+    <div class="col-md-3">
+    <div class="card cardbody">
+    <div class="card-header font: text-white" style="background: blue">
+                ${data.name}<br>
+                <div class="fas fa-user-graduate">${data.getRole()}</div>
+                </div>
+    <div class="card-body">
+        <form role="form">          
+        <div class="form-group">
+            ${data.id}
+        </div>
+        <div class="form-group">
+            ${data.email}
+        </div>
+        <div class="form-group">
+            ${data.school}                  
+        </div>                
+        </form>
+    </div>
+    </div>
+</div>
+</li>`;
 };
 
 
 
 const generateCards = (data) => {
     //data will be an array of Employees (Manager/Intern/Engineer)
+    let htmlString = "";
     data.forEach(element => {
         //generate a card based on role 
         if (element.getRole() === "Manager") {
-            generateManager(data);
+            let string = generateManager(element);
+            htmlString += string;
+            
         } 
+        else if 
+            (element.getRole() === "Engineer") {
+                let string = generateEngineer(element);
+                htmlString += string; 
+                
+        } 
+        else if 
+            (element.getRole() === "Intern") {
+            let string = generateIntern(element);
+            htmlString += string;
+            }
     });
-}
+
+    return htmlString;
+};
+
 const generateHTML = (data) => {
     return `<!DOCTYPE html>
     <html lang="en">
@@ -63,6 +125,7 @@ const generateHTML = (data) => {
         ${generateCards(data)}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     </body>
-    </html>`
-}
+    </html>`;
+};
+
 module.exports = generateHTML;
